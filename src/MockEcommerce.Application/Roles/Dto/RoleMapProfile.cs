@@ -6,9 +6,9 @@ using MockEcommerce.Authorization.Roles;
 
 namespace MockEcommerce.Roles.Dto
 {
-    public class RoleMapProfile : Profile
+    public class ProductMapProfile : Profile
     {
-        public RoleMapProfile()
+        public ProductMapProfile()
         {
             // Role and permission
             CreateMap<Permission, string>().ConvertUsing(r => r.Name);
