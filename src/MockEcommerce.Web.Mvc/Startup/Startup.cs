@@ -66,6 +66,14 @@ namespace MockEcommerce.Web.Startup
                         )
                 )
             );
+
+            // Redis configuration
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = _appConfiguration.GetSection("Redis:Configuration").Value;
+                options.InstanceName = _appConfiguration.GetSection("Redis:InstanceName").Value;
+            });
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
